@@ -1,0 +1,32 @@
+@media screen and (max-width: 800px){
+    #sidebar{
+        display: none;
+    }
+    body{
+        padding: 0px;
+    }
+
+    h1{
+
+        font-size: 36px;
+    }
+    h2{
+
+        font-size: 30px;
+    }
+    p{
+        font-size: 18px;
+    }
+
+    .team-photos .team-photo-block:nth-child(odd){
+        padding-right: 0px;
+    }
+    
+    .team-photos .team-photo-block:nth-child(even){
+        padding-left: 0px;
+    }
+    .team-photo-block{
+        float: none;
+        max-width: 75%;
+    }
+}

@@ -30,9 +30,19 @@ ol, ul {
 }
 
 
+/*////////////////////////////////////////////
+
+BEGIN CUSTOM STYLING
+
+////////////////////////////////////////////*/
+
 html, body{
     font-family: 'Open Sans', sans-serif;
     background-color: #002e5d;
+}
+
+body{
+    padding-left: 260px;
 }
 
 h1{
@@ -50,6 +60,14 @@ p{
     line-height: 150%;
 }
 
+img{
+    max-width: 100%;
+}
+
+.logo{
+    max-width: 100%;
+}
+
 #sidebar{
     background-color: #fff;
     position: fixed;
@@ -57,11 +75,14 @@ p{
     top: 0;
     bottom: 0;
     left: 0;
-    width: 250px;
+    width: 260px;
+    box-shadow: 5px 0px 10px rgba(0,0,0,0.5);
+    z-index: 10;
+    box-sizing: border-box;
 }
 
 #sidebar .logo {
-    width: 210px;
+    width: 220px;
     height: auto;
     position: absolute;
 }
@@ -69,29 +90,50 @@ p{
 #sidebar ul {
     position: absolute;
     bottom: 20px;
+    color: #555;
 }
 
+#sidebar li{
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+#sidebar li:hover{
+    color: #002e5d;
+    font-style: italic;
+    border-top: 2px solid #D62811;
+    border-bottom: 2px solid #D62811;
+}
+
+
+
 #sidebar a {
+    display:block;
     font-family: 'Kanit', sans-serif;
     font-weight: 700;
     text-decoration: none;
-    color: #888;
     font-size: 24px;
     line-height: 200%;
+    color:inherit; 
 }
 
-#main-container{
+#background{
     background-image: url("../images/background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 
     position: fixed;
-    left: 250px;
-    right: 0px;
-    top: 0px;
-    bottom: 0px;
-    overflow: auto;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+#main-container{
+    position: absolute;
+    padding-bottom: 400px;
+    z-index: 1;
 }
 
 .content-block{
@@ -103,4 +145,34 @@ p{
     padding-bottom: 20px;
     border-bottom: 4px solid #D62811;
     margin-bottom: 20px;
+}
+.content-block.content-block-white{
+    background-color: #fff;
+    color: #000;
+}
+.content-block.content-block-white h1, .content-block.content-block-white h2{
+    color: #002e5d;
+}
+
+.team-photos{
+    margin: 20px 0;
+}
+
+.team-photos .team-photo-block:nth-child(odd){
+    padding-right: 40px;
+}
+
+.team-photos .team-photo-block:nth-child(even){
+    padding-left: 40px;
+}
+.team-photo-block{
+    float: left;
+    max-width: 50%;
+    box-sizing: border-box;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.clear{
+    clear: both;
 }
