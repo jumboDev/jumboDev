@@ -172,6 +172,9 @@ img{
     text-align: center;
     margin-bottom: 40px;
 }
+.team-photo-block img{
+    max-height: 80vh;
+}
 
 .clear{
     clear: both;

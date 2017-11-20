@@ -17,6 +17,8 @@
         <li><a href="#project">Project Background</a></li>
         <li><a href="#team">Meet The Team</a></li>
         <li><a href="#plan">Project Plan</a></li>
+        <li><a href="#details">Product Details</a></li>
+        
       </ul>
     </div>
     <div id="background"></div>
@@ -118,12 +120,40 @@
           <br />
 
           <h2>Milestone 3</h2>
-          <p>Functional interface that can search videos, superimpose image, and export image/video
+          <p>Back end technologies: splitting live video, uploading to database
+            <br />
+            Start to front end interface
           </p>
           <br />
 
           <h2>End of Semester</h2>
-          <p>Final testing/debugging for prototype
+          <p>
+            Finalized front end interface &amp; back end technologies
+            <br />Final testing/debugging for prototype
+          </p>
+        </div>
+
+        <div id="details" class='content-block content-block-white'>
+          <h1>Product Details</h1>
+          <p>Our project as it stands today is a representation of the core functionalities that the Jumbo Capture application will ultimately consist of. 
+          <br />
+          <br />  
+          The process starts with a live feed. In our prototype, this live feed is generated from a test video file via the BlackMagic Hyperdeck Studio provided by the VisualFX lab. The Hyperdeck Studio reads a specifically formatted file from a solid state drive, and then outputs this as if the saved file were live footage, via an HD/SDI or HDMI cable. 
+          <br />
+          <br />
+          From there, the BlackMagic Web Presenter takes in the footage and converts it to a signal that can be sent to the control room hardware application as a USB webcam (in our case, our personal laptops or other development computers serve as the control room hardware). 
+          <br />
+          <br />
+          The feed is then processed by PySceneDetect, which we have modified directly to be able to read in live video rather than a pre-existing video file. PySceneDetect analyzes the video and finds where one camera shot cuts to a different camera shot based on a certain threshold difference between one frame and the next. During this process, PySceneDetect will take a snapshot of the first and last frames of the detected clip. 
+          <br />
+          <br />
+          There are a couple of directions in which we can take the splitting of video content from the live video source and are as follows: we split these videos along the detected scene changes live (requiring further optimization of the code we are working with) or we split these videos after the video feed has ended (utilizing the current PySceneDetect logic but sacrificing access to the videos during the event). 
+          <br />
+          <br />
+          We have modified PySceneDetect to upload the split video clips and images to our file server rather than saving them locally in the same folder as the original video file. On the file server, these files are made available to the front end application so that they can be displayed for the user. 
+          <br />
+          <br />
+          Our front end user interface exists as a method by which to test and ensure that the rest of our application is functional, and it additionally serves as a starting point for future development into the front end.
           </p>
         </div>
       </div>
